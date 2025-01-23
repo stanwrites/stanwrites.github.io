@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>cms</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 ---
 layout: home
 ---
@@ -25,7 +15,3 @@ layout: home
 {% if paginator.total_pages > 1 %}
 <a href="/archive">View Archive →</a>
 {% endif %}
-<!-- partial -->
-  
-</body>
-</html>
