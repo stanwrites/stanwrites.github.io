@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>cms</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stanwrites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            color: #888;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+            color: #999;
+        }
+
+        p {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .pixel-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>stanwrites</h1>
+        <p>work in progress</p>
+    </div>
+
+    <svg class="pixel-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <!-- Subtle pixel pattern -->
+        <pattern id="pixelPattern" x="0" y="0" width="0.1" height="0.1">
+            <rect width="1" height="1" fill="#1a1a1a"/>
+            <rect x="1" y="1" width="1" height="1" fill="#1a1a1a"/>
+            <rect x="3" y="2" width="1" height="1" fill="#1a1a1a" fill-opacity="0.3"/>
+            <rect x="2" y="4" width="1" height="1" fill="#1a1a1a" fill-opacity="0.5"/>
+            <rect x="5" y="5" width="1" height="1" fill="#1a1a1a" fill-opacity="0.2"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#pixelPattern)"/>
+    </svg>
+
+    <script>
+        // Generate random pixel pattern
+        document.addEventListener('DOMContentLoaded', () => {
+            const svg = document.querySelector('.pixel-bg');
+            const pattern = document.getElementById('pixelPattern');
+            
+            // Clear existing pattern
+            pattern.innerHTML = '';
+            
+            // Generate random pixels
+            for(let x = 0; x < 10; x++) {
+                for(let y = 0; y < 10; y++) {
+                    if(Math.random() > 0.7) {
+                        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute('x', x);
+                        rect.setAttribute('y', y);
+                        rect.setAttribute('width', '1');
+                        rect.setAttribute('height', '1');
+                        rect.setAttribute('fill', '#1a1a1a');
+                        rect.setAttribute('fill-opacity', Math.random() * 0.3 + 0.1);
+                        pattern.appendChild(rect);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
