@@ -1,9 +1,0 @@
-title: Stan writes
-description: Minimalist blog
-theme: minima
-plugins:
-  - jekyll-paginate
-paginate: 10
-paginate_path: "/page:num/"
-markdown: kramdown
-include: ['_pages']
